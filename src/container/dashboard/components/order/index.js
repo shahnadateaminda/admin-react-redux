@@ -108,7 +108,7 @@ const rows = [
     createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-export default function OrderList(props) {
+ function OrderList(props) {
     const classes = useStyles();
     const [page, setPage] = React.useState(2);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -239,3 +239,4 @@ React.useEffect(() => {
     </>
     );
 }
+export default  React.memo(OrderList)

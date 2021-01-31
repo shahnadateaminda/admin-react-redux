@@ -106,7 +106,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function UsersList(props) {
+ function UsersList(props) {
     const classes = useStyles();
     const [page, setPage] = React.useState(2);
     const [userList, setUserList] = React.useState([])
@@ -250,3 +250,4 @@ export default function UsersList(props) {
         </>
     );
 }
+export default  React.memo(UsersList)

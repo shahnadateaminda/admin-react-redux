@@ -220,7 +220,10 @@ export default function Appbar(props) {
                 />
             </StyledMenuItem>
 
-            <StyledMenuItem>
+            <StyledMenuItem
+             onClick={() => {
+                    history.push('/dashboard/profile')
+                }}>
                 <ListItemIcon>
                     <AccountCircle fontSize="small" />
                 </ListItemIcon>

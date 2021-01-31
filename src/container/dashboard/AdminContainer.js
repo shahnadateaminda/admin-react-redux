@@ -13,6 +13,7 @@ const OrderList = React.lazy(() => import('../dashboard/components/order'));
 const NotFound = React.lazy(() => import('../../components/NotFound'));
 const MoreNotifications = React.lazy(() => import('./components/Notification/MoreNotification'));
 const MoreMessages = React.lazy(() => import('../../components/Messages/MoreMessages'));
+const Profile = React.lazy(() => import('../dashboard/components/profile'));
 
 const AdminContainer = (props) => {
   const auth = useSelector(state => state.auth.authenticated)
@@ -49,6 +50,11 @@ const AdminContainer = (props) => {
           exact
           path={`${props.match.path}/messages`}
           render={() => <MoreMessages {...props} />}
+          />
+              <Route
+          exact
+          path={`${props.match.path}/profile`}
+          render={() => <Profile {...props} />}
         />
         <Route
           exact

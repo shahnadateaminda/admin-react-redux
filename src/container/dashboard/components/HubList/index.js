@@ -107,7 +107,7 @@ const rows = [
     createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-export default function HubLists(props) {
+function HubLists(props) {
     const classes = useStyles();
     const [page, setPage] = React.useState(2);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -235,3 +235,4 @@ export default function HubLists(props) {
     </>
     );
 }
+export default  React.memo(HubLists)

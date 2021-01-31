@@ -26,8 +26,9 @@ export default function CommonRoute(props) {
                render={(props) => {
                   return auth ? <AdminContainer {...props} /> : <Redirect to="/auth/login" />;
                }}
-            />
-            <Route exact path="*" render={() => <NoPageFound />} />
+           /> 
+           
+          <Route exact path="*" render={() => <NoPageFound />} />
          </Switch>
       </Router>
    );
