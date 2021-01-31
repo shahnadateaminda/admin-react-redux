@@ -189,8 +189,8 @@ React.useEffect(() => {
                             <TableBody>
                          
                                 
-                                {rows.map((row) => (
-                                    <TableRow key={row.name} hover>
+                                {rows.map((row,i) => (
+                                    <TableRow key={i} hover>
                                         <TableCell component="th" scope="row">
                                             {row.name}
                                         </TableCell>

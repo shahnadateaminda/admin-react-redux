@@ -2,18 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { ListItem, Collapse, List, makeStyles, MenuList } from '@material-ui/core';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import PeopleIcon from '@material-ui/icons/People';
-import BarChartIcon from '@material-ui/icons/BarChart';
-import StoreIcon from '@material-ui/icons/Store';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import CategoryIcon from '@material-ui/icons/Category';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import StoreIcon from '@material-ui/icons/Store';
 import ListIcon from '@material-ui/icons/List';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import ReorderIcon from '@material-ui/icons/Reorder';
-
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const useStyles = makeStyles((theme) => ({
  
@@ -58,7 +54,7 @@ const MainListItems = (props) => {
   };
 
   return (
-    <div className={classes.list}>
+    <List>
       <ListItem button  
         onClick={() => SelectPath('/dashboard')} >
         <ListItemIcon>
@@ -104,7 +100,7 @@ const MainListItems = (props) => {
         </ListItemIcon>
         <ListItemText primary="Admin" />
       </ListItem>
-     </div>
+     </List>
   )
 }
 export default MainListItems;
