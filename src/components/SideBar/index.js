@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ListItem, Collapse, List, makeStyles, MenuList } from '@material-ui/core';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
+import { ListItem, Collapse, List, makeStyles, MenuList ,ListItemIcon,
+ListItemText} from '@material-ui/core';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import DashboardIcon from '@material-ui/icons/Dashboard';
@@ -45,7 +44,7 @@ const MainListItems = (props) => {
   }, [menu])
 
 
-  const SelectPath = (path,i) => {
+  const selectPath = (path,i) => {
     props.history.push(path)
     setitemIndex(i)
   }
@@ -57,7 +56,7 @@ const MainListItems = (props) => {
     <List className={classes.list}>
       <ListItem button  
         selected={itemIndex ===0}
-        onClick={() => SelectPath('/dashboard',0)} >
+        onClick={() => selectPath('/dashboard',0)} >
         <ListItemIcon>
           <DashboardIcon />
         </ListItemIcon>
@@ -74,7 +73,7 @@ const MainListItems = (props) => {
         <List component="div" disablePadding>
           <ListItem button className={classes.nested}
               selected={itemIndex ===1}
-            onClick={() => SelectPath('/dashboard/hubs',1)}>
+            onClick={() => selectPath('/dashboard/hubs',1)}>
             <ListItemIcon>
               <SupervisorAccountIcon />
             </ListItemIcon>
@@ -82,7 +81,7 @@ const MainListItems = (props) => {
           </ListItem>
           <ListItem button className={classes.nested}
             selected={itemIndex ===2}
-            onClick={() => SelectPath('/dashboard/users',2)}>
+            onClick={() => selectPath('/dashboard/users',2)}>
             <ListItemIcon>
               <ListIcon />
             </ListItemIcon>
@@ -90,7 +89,7 @@ const MainListItems = (props) => {
           </ListItem>
           <ListItem button className={classes.nested}
             selected={itemIndex ===3}
-            onClick={() => SelectPath('/dashboard/orders',3)}>
+            onClick={() => selectPath('/dashboard/orders',3)}>
             <ListItemIcon>
               <ReorderIcon />
             </ListItemIcon>
@@ -100,11 +99,11 @@ const MainListItems = (props) => {
       </Collapse>
       <ListItem button
         selected={itemIndex ===4}
-        onClick={() => SelectPath('/dashboard/orders', 4)}>
+        onClick={() => selectPath('/dashboard/employees', 4)}>
         <ListItemIcon>
           <ShoppingCartIcon />
         </ListItemIcon>
-        <ListItemText primary="Admin" />
+        <ListItemText primary="Employees" />
       </ListItem>
      </List>
   )

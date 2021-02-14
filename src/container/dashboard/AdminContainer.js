@@ -4,6 +4,7 @@ import { connect,useSelector } from "react-redux";
 import { bindActionCreators } from 'redux'
 import * as  UserService from '../../services/user';
 import Loader from '../../components/Loader';
+import EmployeesList from './components/employees';
 
 const Dashboard = React.lazy(() => import('../dashboard/components'));
 const DashboardPage = React.lazy(() => import('../dashboard/components/dashboardPage'));
@@ -55,7 +56,12 @@ const AdminContainer = (props) => {
           exact
           path={`${props.match.path}/profile`}
           render={() => <Profile {...props} />}
-        />
+          />
+              <Route
+          exact
+          path={`${props.match.path}/employees`}
+          render={() => <EmployeesList {...props} />}
+          />
         <Route
           exact
           path={`${props.match.path}/*`}
