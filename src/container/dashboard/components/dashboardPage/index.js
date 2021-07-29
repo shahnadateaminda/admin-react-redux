@@ -63,28 +63,7 @@ export default function DashboardPage(props) {
     <div className={classes.root}>
       {isLoading && <Loader />}
       <CssBaseline />
-      <Container maxWidth="lg" className={classes.container}>
-        <Grid container >
-          <Grid item xs={12} md={8} lg={9}>
-            <Paper className={fixedHeightPaper}>
-              <Chart />
-            </Paper>
-          </Grid>
-          <Grid item xs={12} md={4} lg={3}>
-            <Paper className={fixedHeightPaper}>
-              <Deposits />
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper className={classes.paper}>
-              <Orders />
-            </Paper>
-          </Grid>
-        </Grid>
-        <Box pt={4}>
-          <Copyright />
-        </Box>
-      </Container>
+     
     
     </div>
   );

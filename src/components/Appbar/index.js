@@ -325,12 +325,12 @@ export default function Appbar(props) {
                 }}
                 open={open}>
                 <div className={classes.toolbarIcon}>
-                    <Avatar
+                    {/* <Avatar
                         variant="square"
                         alt="logo"
                         src="https://www.zappfresh.com/images/self/zappfresh-logo.png"
                         className={classes.logo}
-                       />
+                       /> */}
                     <IconButton onClick={handleDrawerClose}>
                         <ChevronLeftIcon />
                     </IconButton>
