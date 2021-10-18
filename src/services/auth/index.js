@@ -1,46 +1,21 @@
-import { LoginBegins, LoginSuccess, LoginFails, LogoutBegins, LogoutSuccess } from "../../redux/action/AuthActions";
-import { OpenNotification } from "../../redux/action/NotifyAction";
+import { LoginBegins, LoginSuccess,  LogoutBegins, LogoutSuccess } from "../../redux/action/AuthActions";
+
 
 
 export const UserLogin = (payload) => {
     return (dispatch) => {
         dispatch(LoginBegins(payload));
-         dispatch(LoginSuccess(payload));
-        localStorage.setItem("authenticated",true);
-        dispatch(OpenNotification({
-                isOpen: true,
-                snackMessage: {
-                    message: 'Logged in Successfully',
-                    severity: 'success'
-                }
-            }))
-          
-        // else {
-        //     dispatch(LoginFails())
-        //     dispatch(OpenNotification({
-        //         isOpen: true,
-        //         snackMessage: {
-        //             message: 'Incorrect Login Id or Password',
-        //             severity: 'error'
-        //         }
-        //     }))
-
-        // }
-
+        dispatch(LoginSuccess(payload));
+        localStorage.setItem("authenticated", true);
+      
     };
 };
 
 export const UserLogout = () => {
     return (dispatch) => {
         dispatch(LogoutBegins())
-        localStorage.clear(); 
+        localStorage.clear();
         dispatch(LogoutSuccess())
-        dispatch(OpenNotification({
-                isOpen: true,
-                snackMessage: {
-                    message: 'Logged out Successfully',
-                    severity: 'success'
-                }
-            }))
+        
     }
 }

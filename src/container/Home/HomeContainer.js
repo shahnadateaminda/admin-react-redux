@@ -2,7 +2,6 @@ import React, { Suspense } from 'react';
 import { Route, Switch, Redirect } from "react-router-dom";
 import { connect, useSelector } from "react-redux";
 import { bindActionCreators } from 'redux'
-import * as  UserService from '../../services/user';
 
 const Dashboard = React.lazy(() => import('./components'));
 const Home = React.lazy(() => import('./components/Home'));
@@ -10,8 +9,8 @@ const NotFound = React.lazy(() => import('../../components/NotFound'));
 
 
 const AdminContainer = (props) => {
-  const auth =true
-  console.log(auth,'33333333333333333333');
+  const auth = true
+
   return (
     <Suspense fallback={''}>
       <Dashboard>
@@ -21,12 +20,10 @@ const AdminContainer = (props) => {
             path={`${props.match.path}`}
             render={() => auth ? <Home {...props} /> : ''}
           />
-          {/* <Route
+          <Route
             exact
             path={`${props.match.path}/*`}
-            render={() => <NotFound {...props} />} /> */}
-
-
+            render={() => <NotFound {...props} />} />
         </Switch>
       </Dashboard>
     </Suspense>
@@ -34,7 +31,6 @@ const AdminContainer = (props) => {
 }
 
 function mapStateToProps(state) {
-
   return {
     userauth: state?.auth,
     users: state?.users
@@ -43,6 +39,6 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(Object.assign({}, UserService), dispatch) }
+  return { actions: bindActionCreators(Object.assign({}), dispatch) }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(AdminContainer);
