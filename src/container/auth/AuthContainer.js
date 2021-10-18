@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 import * as  UserService from '../../services/auth';
 
 const Auth = React.lazy(() => import('./index'));
-const SignIn = React.lazy(() => import('./SignIn'));
+const SignIn = React.lazy(() => import('./SignIn/index'));
 const SignUp = React.lazy(() => import('./SignUp'));
 const NotFound = React.lazy(() => import('../../components/NotFound'));
 const ForgotPassword = React.lazy(() => import('./ForgotPassword'));

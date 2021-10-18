@@ -4,7 +4,7 @@ export const UserLogin = (payload) => {
     return (dispatch) => {
         dispatch(LoginBegins(payload));
         dispatch(LoginSuccess(payload));
-        localStorage.setItem("authenticated", true);
+        
     };
 };
 

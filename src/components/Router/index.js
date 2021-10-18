@@ -1,21 +1,16 @@
-import React, {useEffect, useState} from "react";
-import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import { useSelector } from 'react-redux'
 import AuthContainer from "../../container/auth/AuthContainer";
 import HomeContainer from "../../container/Home/HomeContainer";
 import NoPageFound from "../NotFound";
 
 export default function CommonRoute(props) {
-   const auth = true
-   console.log(auth,'aaaaaaaaaaaaaaa');
-  return (
+   const auth = false
+ 
+   return (
       <Router>
          <Switch>
-            {/* <Route exact path="/home">
-               {auth ?
-               <Redirect to="/" />:
-                   <Redirect to="/auth/login" />}
-            </Route> */}
             <Route
                path="/auth"
                render={(props) => {
