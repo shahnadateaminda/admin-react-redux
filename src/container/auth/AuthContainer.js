@@ -3,7 +3,6 @@ import { Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from 'redux'
 import * as  UserService from '../../services/auth';
-import Loader from '../../components/Loader';
 
 const Auth = React.lazy(() => import('./index'));
 const SignIn = React.lazy(() => import('./SignIn'));
@@ -14,7 +13,7 @@ const ForgotPassword = React.lazy(() => import('./ForgotPassword'));
 const AuthContainer = (props) => {
     
   return (
-     <Suspense fallback={<Loader />}>
+     <Suspense fallback={''}>
           <Auth {...props} >
             <Switch>
                 <Route

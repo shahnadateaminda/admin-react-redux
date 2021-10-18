@@ -3,7 +3,6 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { connect,useSelector } from "react-redux";
 import { bindActionCreators } from 'redux'
 import * as  UserService from '../../services/user';
-import Loader from '../../components/Loader';
 
 const Dashboard = React.lazy(() => import('../dashboard/components'));
 const DashboardPage = React.lazy(() => import('../dashboard/components/dashboardPage'));
@@ -14,7 +13,7 @@ const NotFound = React.lazy(() => import('../../components/NotFound'));
 const AdminContainer = (props) => {
   const auth = useSelector(state => state.auth.authenticated)
   return (
-   <Suspense fallback={<Loader />}>
+   <Suspense fallback={''}>
     <Dashboard>
       <Switch>
         <Route
