@@ -6,16 +6,14 @@ import HomeContainer from "../../container/Home/HomeContainer";
 import NoPageFound from "../NotFound";
 
 export default function CommonRoute(props) {
-   const auth = false
- 
+   const auth = true
+
    return (
       <Router>
          <Switch>
             <Route
                path="/auth"
-               render={(props) => {
-                  return <AuthContainer {...props} />;
-               }}
+               render={(props) => (<AuthContainer {...props} />)}
             />
             <Route
                path="/"

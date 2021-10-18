@@ -61,9 +61,9 @@ export default function SignIn(props) {
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control type="email" name="email" onChange={formik.handleChange} placeholder="Enter email" />
-                <Form.Text className="text-muted">
+               <Form.Text className="text-muted">
                   We'll never share your email with anyone else.
-                </Form.Text>
+                </Form.Text> 
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
