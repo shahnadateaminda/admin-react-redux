@@ -2,19 +2,20 @@ import React, {useEffect, useState} from "react";
 import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 import { useSelector } from 'react-redux'
 import AuthContainer from "../../container/auth/AuthContainer";
-import AdminContainer from "../../container/dashboard/AdminContainer";
+import HomeContainer from "../../container/Home/HomeContainer";
 import NoPageFound from "../NotFound";
 
 export default function CommonRoute(props) {
-   const auth = useSelector(state => state.auth.authenticated)
+   const auth = true
+   console.log(auth,'aaaaaaaaaaaaaaa');
   return (
       <Router>
          <Switch>
-            <Route exact path="/">
+            {/* <Route exact path="/home">
                {auth ?
-               <Redirect to="/dashboard" />:
+               <Redirect to="/" />:
                    <Redirect to="/auth/login" />}
-            </Route>
+            </Route> */}
             <Route
                path="/auth"
                render={(props) => {
@@ -22,9 +23,9 @@ export default function CommonRoute(props) {
                }}
             />
             <Route
-               path="/dashboard"
+               path="/"
                render={(props) => {
-                  return auth ? <AdminContainer {...props} /> : <Redirect to="/auth/login" />;
+                  return auth ? <HomeContainer {...props} /> : <Redirect to="/auth/login" />;
                }}
             />
             <Route exact path="*" render={() => <NoPageFound />} />
