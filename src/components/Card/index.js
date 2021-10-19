@@ -27,11 +27,8 @@ export default function CardComponent() {
             onDrag={(event, info) => event?.movementX > 0 ? setPosition('right') : setPosition('left')}
             dragConstraints={{ top: 0, left: 0, right: 0, bottom: 50, }}
             style={{ x }}>
-            {position === 'left' &&
-                <span className={classes.global}>GLOBAL</span>
-            }
-            {
-                [1, 2, 3, 4, 5].map((cardItem, i) =>
+            {position === 'left' && <span className={classes.global}>GLOBAL</span>}
+            {[1, 2, 3, 4, 5].map((cardItem, i) =>
                     <div key={i}>
                         <Row>
                             <Col xs={12} sm={12} md={12} lg={12} className={'m-auto'}>
