@@ -1,7 +1,22 @@
 .card {
     padding: 10px;
+    position: relative;
     img {
         height: 200px !important;
         object-fit: cover;
+    }
+    .global {
+        position: absolute;
+        z-index: 100;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        left: 0;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        font-size: 70px;
+        font-weight: 600;
+        color: #e3e9ef6b;
     }
 }
