@@ -2,10 +2,6 @@ import api from "../../axios";
 import { LoginBegins, LoginSuccess, LogoutBegins, LogoutSuccess } from "../../redux/action/AuthActions";
 import { decrypt } from './../../crypto/index'
 
-
-
-
-
 export const UserLogin = (payload) => {
     return (dispatch) => {
         dispatch(LoginBegins());

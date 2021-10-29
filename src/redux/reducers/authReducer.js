@@ -7,7 +7,7 @@ const initialState = {
     email: '',
     password: ''
   },
-  authenticated: localStorage.getItem('authenticated') || false,
+  authenticated: false,
 
 };
 
@@ -19,29 +19,28 @@ export default function authReducer(state = initialState, action) {
         isLoading: true,
       }
     case LOGIN_SUCCESS:
-        return {
+      return {
         ...state,
-          isLoading: false,
-          authenticated:true,
+        isLoading: false,
+        authenticated: true,
       }
     case LOGIN_FAILS:
-        return {
+      return {
         ...state,
         isLoading: false,
       }
     case LOGOUT_BEGINS:
-        return {
+      return {
         ...state,
         isLoading: true,
       }
     case LOGOUT_SUCCESS:
-      console.log('pppp');
-        return {
+      return {
         ...state,
-          isLoading: false,
-         authenticated:false,
+        isLoading: false,
+        authenticated: false,
       }
-   
+
 
     default:
       return state;
