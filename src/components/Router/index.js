@@ -5,7 +5,7 @@ import HomeContainer from "../../container/Home/HomeContainer";
 import NoPageFound from "../NotFound";
 
 export default function CommonRoute(props) {
-   const auth = false
+   const auth = true
 
    return (
       <Router>

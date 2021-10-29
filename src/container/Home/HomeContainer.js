@@ -3,6 +3,7 @@ import { Route, Switch,  } from "react-router-dom";
 import { connect,  } from "react-redux";
 import { bindActionCreators } from 'redux'
 
+
 const Dashboard = React.lazy(() => import('./components'));
 const Home = React.lazy(() => import('./components/Home'));
 const NotFound = React.lazy(() => import('../../components/NotFound'));
