@@ -15,8 +15,8 @@ const validationSchema = yup.object({
 export default function ForgotPassword(props) {
 
 
-  const { actions, userdata, history } = props
-  const [success, setSuccess] = React.useState(false);
+  const { history } = props
+  const [, setSuccess] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   const timer = React.useRef();
 

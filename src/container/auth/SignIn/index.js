@@ -17,11 +17,11 @@ const validationSchema = yup.object({
 
 
 export default function SignIn(props) {
-  const { actions, userdata, history } = props
-  const [success, setSuccess] = React.useState(false);
+  const { actions,  history } = props
+  const [, setSuccess] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   const timer = React.useRef();
-  
+
   React.useEffect(() => {
     return () => {
       clearTimeout(timer.current);
@@ -32,6 +32,7 @@ export default function SignIn(props) {
     initialValues: {
       email: '',
       password: '',
+  
     },
     validationSchema: validationSchema,
 
@@ -52,18 +53,18 @@ export default function SignIn(props) {
   return (
     <div className={classes.signIn}>
       <Row>
-        <Col xs={8} className={'overflow-hidden'}>
-          <img src="https://images.unsplash.com/photo-1533022139390-e31c488d69e2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1332&q=80" />
+        <Col xs={false} sm={6} md={8} lg={8} className={'overflow-hidden d-none d-sm-block'}>
+          <img alt="test" src="https://images.unsplash.com/photo-1533022139390-e31c488d69e2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1332&q=80" />
         </Col>
-        <Col xs={4} >
+        <Col xs={12} sm={6} md={4} lg={4}>
           <Container className={classes.container}>
             <Form onSubmit={formik.handleSubmit} >
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control type="email" name="email" onChange={formik.handleChange} placeholder="Enter email" />
-               <Form.Text className="text-muted">
+                <Form.Text className="text-muted">
                   We'll never share your email with anyone else.
-                </Form.Text> 
+                </Form.Text>
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>

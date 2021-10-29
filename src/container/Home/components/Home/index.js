@@ -1,8 +1,9 @@
 import React from 'react'
 import CardComponent from '../../../../components/Card';
 import classes from './Home.module.scss';
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence,  } from "framer-motion";
 import Tilt from "react-parallax-tilt";
+
 
 export default function Home() {
   return (

@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-import { useSelector } from 'react-redux'
 import AuthContainer from "../../container/auth/AuthContainer";
 import HomeContainer from "../../container/Home/HomeContainer";
 import NoPageFound from "../NotFound";
 
 export default function CommonRoute(props) {
-   const auth = true
+   const auth = false
 
    return (
       <Router>

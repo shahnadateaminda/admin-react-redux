@@ -7,10 +7,9 @@ import {
 } from "../constants";
 
 
-export const LoginBegins = (payLoad) => {
+export const LoginBegins = () => {
   return {
-    type: LOGIN_BEGINS,
-    payLoad
+    type: LOGIN_BEGINS
   }
 };
 

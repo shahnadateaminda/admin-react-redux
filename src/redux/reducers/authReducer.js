@@ -11,7 +11,7 @@ const initialState = {
 
 };
 
-export default function (state = initialState, action) {
+export default function authReducer(state = initialState, action) {
   switch (action.type) {
     case LOGIN_BEGINS:
       return {
@@ -41,11 +41,7 @@ export default function (state = initialState, action) {
           isLoading: false,
          authenticated:false,
       }
-    case LOGIN_FAILS:
-       return {
-        ...state,
-          isLoading: false,
-      }
+   
 
     default:
       return state;

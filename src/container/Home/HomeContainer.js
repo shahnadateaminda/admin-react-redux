@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
-import { Route, Switch, Redirect } from "react-router-dom";
-import { connect, useSelector } from "react-redux";
+import { Route, Switch,  } from "react-router-dom";
+import { connect,  } from "react-redux";
 import { bindActionCreators } from 'redux'
 
 const Dashboard = React.lazy(() => import('./components'));

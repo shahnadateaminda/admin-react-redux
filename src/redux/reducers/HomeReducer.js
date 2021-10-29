@@ -1,4 +1,7 @@
 import {
+    FETCH_CARDS_FAIL,
+    FETCH_CARDS_START,
+    FETCH_CARDS_SUCCESS,
     GET_USER_LIST_BEGINS,
     GET_USER_LIST_FAILS,
     GET_USER_LIST_SUCCESS
@@ -7,18 +10,25 @@ import {
 
 const initialState = {
     isLoading: false,
-    userList:[],
+    userList: [],
 };
 
-export default function (state = initialState, action) {
+export default function homeReducer(state = initialState, action) {
     switch (action.type) {
         case GET_USER_LIST_BEGINS:
-             return {...state,isLoading:true }
+            return { ...state, isLoading: true }
         case GET_USER_LIST_SUCCESS:
             return { ...state, isLoading: false, userList: action.payLoad }
         case GET_USER_LIST_FAILS:
-        return { ...state, isLoading: false, userList: [] }
-       default:
+            return { ...state, isLoading: false, userList: [] }
+        case FETCH_CARDS_START:
+            return { ...state, isLoading: true }
+        case FETCH_CARDS_SUCCESS:
+            return { ...state, isLoading: false }
+        case FETCH_CARDS_FAIL:
+            return { ...state, isLoading: false }
+
+        default:
             return state;
     }
 }
